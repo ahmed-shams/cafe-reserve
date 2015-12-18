@@ -1,5 +1,20 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<div ng-if="!showLoadingDiv">
+    <div class="row check-mark-big">
+        <i class="demo-icon icon-reserve_widget_icon_11">&#xe80a;</i>    
+    </div>
+    <p class="row thnk-text">    
+            Thank you, {{user.fname}}! <br/>
+            Your reservation is confirmed.
+    </p>
+    <div class="row">
+        <div class="col-lg-6">
+            <div ng-if="user.requests.length" class="requests">
+                <h3>Special Requests</h3>
+                <p>{{user.requests}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-if="showLoadingDiv" class="loading-div">
+    <h3>Confirming Reservation…</h3>
+</div>

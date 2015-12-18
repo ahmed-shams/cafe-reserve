@@ -1,5 +1,74 @@
 <div class="row timer">
-    <i class="demo-icon icon-reserve_widget_icon_10">&#xe809;</i>
+    <i class="demo-icon icon-reserve_widget_icon_04">&#xe803;</i>
     <span class="time-text">Reservation on hold for: </span>
     <timer countdown="countdownVal" interval="1000" finish-callback="startClock()">{{mminutes}} m {{sseconds}} s</timer>
+</div>
+
+<div class="row">
+    <div class="col-lg-6 col-md-offset-2">
+        <form class="form-horizontal" name="resForm">
+
+          <div class="form-group has-feedback" ng-class="resForm.fname.$dirty && resForm.fname.$invalid ? 'has-error': 'has-success'">
+            <div class="col-sm-10">
+              <label ng-if="resForm.fname.$dirty && resForm.fname.$invalid" 
+                     class="control-label" 
+                     for="fname">Enter a valid first name</label>
+              <input type="text" name="fname" class="form-control" 
+                     placeholder="First Name" ng-model="user.fname" 
+                     required 
+                     ng-minlength="2">        
+            <span ng-if="resForm.fname.$dirty" class="glyphicon form-control-feedback" ng-class="resForm.fname.$invalid ? 'glyphicon-remove' : 'glyphicon-ok'"></span>
+            </div>
+          </div>
+          <div class="form-group has-feedback" ng-class="resForm.lname.$dirty && resForm.lname.$invalid ? 'has-error': 'has-success'">
+            <div class="col-sm-10">
+              <label ng-if="resForm.lname.$dirty && resForm.lname.$invalid" 
+                     class="control-label" 
+                     for="lname">Enter a valid last name</label>
+              <input type="text" name="lname" class="form-control" 
+                     placeholder="Last Name" ng-model="user.lname" 
+                     required 
+                     ng-minlength="2"
+                     ng-minlength="10">        
+            <span ng-if="resForm.lname.$dirty" class="glyphicon form-control-feedback" ng-class="resForm.lname.$invalid ? 'glyphicon-remove' : 'glyphicon-ok'"></span>
+            </div>
+          </div>
+          <div class="form-group has-feedback" ng-class="resForm.phone.$dirty && resForm.phone.$invalid ? 'has-error': 'has-success'">
+            <div class="col-sm-10">
+              <label ng-if="resForm.phone.$dirty && resForm.phone.$invalid" 
+                     class="control-label" 
+                     for="phone">Enter a valid phone number</label>
+              <input type="number" name="phone" class="form-control" 
+                     placeholder="Mobile Phone Number" ng-model="user.phone" 
+                     required 
+                     ng-minlength="10"
+                     ng-maxlength="10">        
+            <span ng-if="resForm.phone.$dirty" class="glyphicon form-control-feedback" ng-class="resForm.phone.$invalid ? 'glyphicon-remove' : 'glyphicon-ok'"></span>
+            </div>
+          </div>
+          <div class="form-group has-feedback" ng-class="resForm.uEmail.$dirty && (resForm.uEmail.$error.email || resForm.uEmail.$error.required) ? 'has-error' : resForm.uEmail.$dirty ? 'has-success' : '' ">
+            <div class="col-sm-10">
+              
+              <label ng-if="resForm.uEmail.$dirty && resForm.uEmail.$error.email" 
+                     class="control-label" 
+                     for="uEmail">Enter a valid email address</label>
+              <input type="email" name="uEmail" class="form-control" placeholder="Email" ng-model="user.email" required >        
+            <span ng-if="resForm.uEmail.$dirty" class="glyphicon form-control-feedback" ng-class="resForm.uEmail.$invalid ? 'glyphicon-remove' : 'glyphicon-ok'"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-10">
+              <textarea class="form-control" name="requests" rows="3" placeholder="Special Requests for Bar Bolonat (Optional)" ng-model="user.requests"></textarea>
+            </div>
+          </div>
+
+          
+          <div class="form-group">
+            <div class="col-sm-10">
+              <button class="btn btn-default btn-lg" ng-class="{'has-error': resForm.$invalid}" ng-disabled="resForm.$invalid" ng-click="changeView(user)">FINISH</button>
+            </div>
+          </div>
+          <div class="copy-right">This is a bunch of legal copy in small text. I love putting legal copy on web pages.</div>
+        </form>
+    </div>
 </div>

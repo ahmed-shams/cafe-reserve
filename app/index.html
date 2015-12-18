@@ -17,8 +17,9 @@
 </head>
 <body>
   <div class="header">
-    <div class="header-text-sm">Book a Reservation</div>
+    <div class="header-text-sm" >{{smallTitle}}</div>
     <div class="header-text-lg">Café Reserve</div>
+    <div ng-if="step == 2 && !showLoadingDiv" class="confirm-text-lg">Reservation Confirmed!</div>
   </div>
   <div class="container">
 

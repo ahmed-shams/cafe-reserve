@@ -40,14 +40,13 @@ body {
       font-family: "fontello";
       font-style: normal;
       font-weight: normal;
-      font-size: 26px;
-      line-height: 26px;
+      font-size: 45px;
+      line-height: 45px;
       speak: none;
      
       display: inline-block;
       text-decoration: inherit;
       width: 1em;
-      margin-right: .2em;
       text-align: center;
       /* opacity: .8; */
      
@@ -76,12 +75,14 @@ body {
 .timer {
     text-align: center;
     margin-top: 3em;
+    margin-bottom: 3em;
 }
 
 .time-text, timer {
     font-family: "Roboto-Medium";
     font-size: 22px;
     color: #363637;
+    vertical-align: text-bottom;
 }
 
 .header-text-lg {
@@ -105,10 +106,103 @@ body {
   padding-top: 1em;
 }
 
+input.form-control, textarea.form-control {
+  font-size: 20px;
+  background-color: #f9f9f9;
+  color: #363637;
+}
 
+input.form-control{
+  height: 60px;
+}
 
+.btn-lg {
+  width: 100%;
+  font-size: 22px;
+  color: #ffffff;
+  background: #ac9456;
+}
 
+.btn-lg:hover {
+  background: #967d3c;
+  color: #ffffff;
+}
 
+.btn-lg:focus {
+  background: #8b763e;
+  color: #ffffff;
+}
+
+.btn-lg.disabled {
+  background: #e2e2e2;
+}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #aaaaaa;
+}
+input:-moz-placeholder, textarea:-moz-placeholder {
+  color: #aaaaaa;
+}
+
+.has-error .form-control {
+  background-color: rgba(208, 1, 27, 0.07);
+  border: 0;
+}
+
+.has-error .control-label {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.has-success .form-control {
+  border-color: #ccc;
+}
+
+.has-success .form-control-feedback {
+  color: #ac9456;
+}
+
+.confirm-text-lg {
+  width: 100%;
+  background-color: #ac9456;
+  color: #ffffff;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 3em;
+  height: 3.1em;
+  padding-top: 0.7em;
+}
+
+.check-mark-big {
+  text-align: center;
+  color: #ac9456;
+  font-size: 45px;
+  margin-top: 2.5em;
+  margin-bottom: 1em;
+}
+
+.check-mark-big .demo-icon {
+  font-size: 75px;
+}
+
+.thnk-text {
+  height: 1.5em;
+  text-align: center;
+  font-size: 24px;
+  line-height: 30px;
+  margin-bottom: 3em;
+}
+
+.requests {
+  text-align: center;
+}
+
+.loading-div {
+  margin-top: 20%;
+  text-align: center;
+  width: 100%;
+  height: 300px;
+}
 
 
 
