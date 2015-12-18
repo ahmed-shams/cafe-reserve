@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute'])
+angular.module('myApp.view1', ['ngRoute', 'timer'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view1', {
@@ -8,7 +8,18 @@ angular.module('myApp.view1', ['ngRoute'])
     controller: 'View1Ctrl'
   });
 }])
+.controller('View1Ctrl', function($scope) {
 
-.controller('View1Ctrl', [function() {
+    $scope.timerRunning = true;
+    var timeStarted = false;
+    $scope.countdownVal = 300;
 
-}]);
+    $scope.startClock = function() {
+        alert("Your reservation has expired");
+        $scope.$broadcast('timer-start');
+        $scope.timerRunning = true;
+
+    };
+
+
+});
